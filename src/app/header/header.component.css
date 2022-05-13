@@ -1,0 +1,32 @@
+.header {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vh 2vw;
+    background-color: white;
+}
+
+.logo{
+    font-size: clamp(1.5rem,5vw,2.5rem);
+}
+
+.list {
+    display: flex;
+    appearance: none;
+    list-style-type: none;
+    justify-content: space-between;
+    gap: 2.5vh;
+}
+
+.item a{
+    font-size: clamp(1.2rem,3vw,1.5rem);
+    font-weight: 400;
+    color: black;
+    transition: 100ms ease-in-out;
+}
+
+.item a:hover{
+    color: var(--primary-red);
+}

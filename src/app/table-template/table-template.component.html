@@ -1,0 +1,60 @@
+<main class="main">
+  <div>
+    <table mat-table class="table" matSort aria-label="Elements">
+      <!-- Id Column -->
+      <ng-container matColumnDef="author">
+        <th class="cell head" mat-header-cell *matHeaderCellDef mat-sort-header>Autor</th>
+        <td class="cell" mat-cell *matCellDef="let row">{{row.author}}</td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="title">
+        <th class="cell head" mat-header-cell *matHeaderCellDef mat-sort-header>Título</th>
+        <td class="cell" mat-cell *matCellDef="let row">{{row.title}}</td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th class="cell head" mat-header-cell *matHeaderCellDef mat-sort-header>Descrição</th>
+        <td class="cell" mat-cell *matCellDef="let row">{{row.description}}</td>
+      </ng-container>
+      <ng-container matColumnDef="presentationDate">
+        <th class="cell head" mat-header-cell *matHeaderCellDef mat-sort-header>Data de Apresentação</th>
+        <td class="cell" mat-cell *matCellDef="let row">{{row.presentationDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="maintenanceDate">
+        <th class="cell head" mat-header-cell *matHeaderCellDef mat-sort-header>Data de Manutenção</th>
+        <td class="cell" mat-cell *matCellDef="let row">{{row.maintenanceDate}}</td>
+      </ng-container>
+      <ng-container matColumnDef="degreeType">
+        <th class="cell head" mat-header-cell *matHeaderCellDef mat-sort-header>Tipo de Graduação</th>
+        <td class="cell" mat-cell *matCellDef="let row">{{row.degreeType}}</td>
+      </ng-container>
+      <ng-container matColumnDef="campus">
+        <th class="cell head" mat-header-cell *matHeaderCellDef mat-sort-header>Campus</th>
+        <td class="cell" mat-cell *matCellDef="let row">{{row.campus}}</td>
+      </ng-container>
+      <ng-container matColumnDef="degreeProgram">
+        <th class="cell head" mat-header-cell *matHeaderCellDef mat-sort-header>Programa de Graduação</th>
+        <td class="cell" mat-cell *matCellDef="let row">{{row.degreeProgram}}</td>
+      </ng-container>
+      <ng-container matColumnDef="researchLine">
+        <th class="cell head" mat-header-cell *matHeaderCellDef mat-sort-header>Linha de Pesquisa</th>
+        <td class="cell" mat-cell *matCellDef="let row">{{row.researchLine}}</td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th class="cell head" mat-header-cell *matHeaderCellDef mat-sort-header></th>
+        <td class="cell actions" mat-cell *matCellDef="let row">
+          <button>
+            <mat-icon aria-hidden="false" alt="Editar item.">edit</mat-icon>
+          </button>
+          <button>
+            <mat-icon aria-hidden="false" alt="Deletar item.">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+    <mat-paginator class="paginator" #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSize]="5">
+    </mat-paginator>
+  </div>
+</main>
